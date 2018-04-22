@@ -1,0 +1,6 @@
+<h4>{{ title }}</h4>
+<div>
+    {% for product in products %}
+        {% include "catalogue/product_list/_compact_product_details.html" %}
+    {% endfor %}
+</div>

@@ -1,0 +1,213 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="José Erimá Fernandes Júnior" />
+    {% render_block "meta" %}
+
+	<!-- Stylesheets
+	============================================= -->
+    {% render_block "css" %}
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css" />
+
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/colors.css' %}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+
+	<title>Dançart {% block title %}{% endblock %}</title>
+
+</head>
+
+<body class="stretched">
+    {% render_block "js_body" %}
+    {% cms_toolbar %}
+    <!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Top Bar
+        ============================================= -->
+        <div id="top-bar">
+
+            <div class="container clearfix">
+
+                <div class="col_half nobottommargin">
+
+                    <!-- Top Links
+                    ============================================= -->
+                    <div class="top-links">
+                        <ul>
+                        	{% show_menu 0 0 1 1 %}
+                        </ul>
+                    </div><!-- .top-links end -->
+
+                </div>
+
+                <div class="col_half fright col_last nobottommargin">
+
+                    <!-- Top Social
+                    ============================================= -->
+                    <div id="top-social">
+                        <ul>
+                            <li><a target="_blank" href="https://www.facebook.com/dancart.loja" class="si-facebook"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
+                            <li><a target="_blank" href="https://plus.google.com/105235975175002340801/about" class="si-gplus"><span class="ts-icon"><i class="icon-gplus"></i></span><span class="ts-text">Google+</span></a></li>
+                            <li><a target="_blank" href="https://instagram.com/dancartloja/" class="si-instagram"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
+                            <li><a href="skype:dancart?call" class="si-skype"><span class="ts-icon"><i class="icon-skype"></i></span><span class="ts-text">Dançart</span></a></li>
+                            <li><a href="tel:+553135119685" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">(31) 3511-9685</span></a></li>
+                            <li><a href="mailto:dancart.loja@gmail.com" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">dancart.loja@gmail.com</span></a></li>
+                        </ul>
+                    </div><!-- #top-social end -->
+
+                </div>
+
+            </div>
+
+        </div><!-- #top-bar end -->
+
+        <!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo">
+					<a href="/" class="standard-logo"><img src="{% static 'images/logo.png' %}" alt="Dançart - Artigos de Dança"></a>
+					<a href="/" class="retina-logo"><img src="{% static 'images/logo@2x.png' %}" alt="Dançart - Artigos de Dança"></a>
+				</div><!-- #logo end -->
+
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+						<ul>
+                            {% show_menu_below_id "home" 0 1 1 1 "main_menu.html" %}
+                        </ul>
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="{% url 'all_products' %}" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Digite &amp; aperte enter para buscar..">
+							</form>
+						</div><!-- #top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>
+
+		</header><!-- #header end -->
+        <!-- Content
+		============================================= -->
+		<section id="content">
+            {% block content %}{% endblock %}
+        </section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+                    <div class="col_half">
+                        <address>
+                            <a target="_blank" href="https://www.google.com.br/maps/place/Dan%C3%A7art+-+Artigos+de+Dan%C3%A7a/@-19.9642279,-44.2054549,17z/data=!4m2!3m1!1s0xa6c39964e4fbe9:0x82976d795012ae31?hl=en">Rua do Rosário 115, Angola <br> Betim, Minas Gerais</a>
+                        </address>
+                    </div>
+
+					<div class="col_half col_last tright pull-right">
+
+                        <div class="fright clearfix">
+							<a href="https://www.facebook.com/dancart.loja" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="https://plus.google.com/105235975175002340801/about" class="social-icon si-small si-borderless si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="https://instagram.com/dancartloja/" class="social-icon si-small si-borderless si-instagram">
+								<i class="icon-instagram"></i>
+								<i class="icon-instagram"></i>
+							</a>
+
+							<a href="skype:dancart?call" class="social-icon si-small si-borderless si-skype">
+								<i class="icon-skype"></i>
+								<i class="icon-skype"></i>
+							</a>
+
+							<a href="tel:+553135119685" class="social-icon si-small si-borderless si-call">
+								<i class="icon-call"></i>
+								<i class="icon-call"></i>
+							</a>
+
+							<a href="mailto:dancart.loja@gmail.com" class="social-icon si-small si-borderless si-email3">
+								<i class="icon-email3"></i>
+								<i class="icon-email3"></i>
+							</a>
+
+						<div class="clear"></div>
+
+						<a href="mailto:dancart.loja@gmail.com"><i class="icon-envelope2"></i> dancart.loja@gmail.com</a> <span class="middot">&middot;</span> <i class="icon-headphones"></i> (31) 3511-9685 <span class="middot">&middot;</span> <a href="skype:dancart?call"><i class="icon-skype2"></i> Dançar</a>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+    </div><!-- #wrapper end -->
+
+
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="{% static 'js/functions.js' %}"></script>
+    {% render_block "js" %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68938513-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

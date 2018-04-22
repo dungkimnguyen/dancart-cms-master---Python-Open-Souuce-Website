@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static cms_tags %}
+
+{% block content %}
+<div class="content-wrap">
+
+    <div class="container clearfix">
+
+        <div class="col_two_third bottommargin-lg">
+
+            <div class="fslider" data-arrows="false">
+                <div class="flexslider">
+                    <div class="slider-wrap">
+                        <div class="slide">
+                            <a href="{% url 'category' category='jazz' %}">
+                                <img src="{% static 'images/banners/jazz-contemporaneo.jpg' %}"  alt="Jazz e Contemporâneo">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="{% url 'category' category='ginastica-ritmica' %}">
+                                <img src="{% static 'images/banners/ginastica-ritmica.jpg' %}"  alt="Ginástica Rítmica">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="{% url 'category' category='danca-do-ventre' %}">
+                                <img src="{% static 'images/banners/danca-ventre.jpg' %}"  alt="Dança do Ventre">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="{% url 'category' category='danca-de-salao' %}">
+                                <img src="{% static 'images/banners/danca-salao.jpg' %}"  alt="Dança Salão">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col_one_third bottommargin-lg col_last">
+
+            <div class="col_full bottommargin-sm">
+                <a href="{% url 'category' category='ministerio-de-danca' %}"><img src="{% static 'images/banners/ministerio-danca.jpg' %}"  alt="Ministério Dança"></a>
+            </div>
+
+            <div class="col_full nobottommargin">
+                <a href="{% url 'category' category='ballet' %}"><img src="{% static 'images/banners/ballet.jpg' %}"  alt="Ballet"></a>
+            </div>
+
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    {% placeholder 'home_content' %}
+
+
+</div>
+{% endblock %}

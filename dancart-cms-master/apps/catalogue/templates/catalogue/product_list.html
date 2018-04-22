@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static thumbnail cms_tags menu_tags pagination_nav %}
+{% block content %}
+
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="postcontent nobottommargin col_last">
+
+                <!-- Shop
+                ============================================= -->
+                <div id="shop" class="product-3 clearfix">
+
+                    {% for product in products %}
+                        {% include 'catalogue/product_list/_enlarged_product_details.html' with bottom_margin='lg' %}
+                    {% empty %}
+                        Nenhum produto encontrado.
+                    {% endfor %}
+
+                    {% pagination_nav_qs page_obj '' request.GET 'page' %}
+                </div><!-- #shop end -->
+
+            </div><!-- .postcontent end -->
+
+            <!-- Sidebar
+            ============================================= -->
+            <div class="sidebar nobottommargin">
+                <div class="sidebar-widgets-wrap">
+
+                    <div class="widget widget_links clearfix">
+
+                        <h4>Categorias</h4>
+                        {% block category_menu %}
+                            <ul>
+                                {% show_sub_menu 1 2 100 "category_main_menu.html" %}
+                            </ul>
+                        {% endblock %}
+
+                    </div>
+
+                    <div class="widget clearfix">
+
+                        {% include 'catalogue/product_list/_compact_list.html' with title='Produtos recentes' products=recent_items %}
+
+                    </div>
+
+                    <div class="widget clearfix">
+
+                        {% include 'catalogue/product_list/_compact_list.html' with title='Produtos populares' products=popular_items %}
+
+                    </div>
+                </div><!-- .sidebar end -->
+            </div>
+        </div>
+    </div>
+{% endblock %}

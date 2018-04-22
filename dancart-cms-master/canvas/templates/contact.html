@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static cms_tags %}
+
+{% block content %}
+
+<div class="content-wrap">
+
+    <div class="container clearfix">
+
+        <!-- Contact Form
+        ============================================= -->
+        <div class="col_half">
+
+            <div class="fancy-title title-dotted-border">
+                <h3>Entre em contato!</h3>
+            </div>
+
+            {% placeholder 'contact' %}
+
+        </div><!-- Contact Form End -->
+
+        <!-- Google Map
+        ============================================= -->
+        <div class="col_half col_last">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.0544712695246!2d-44.205824384511445!3d-19.964211344530934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c39964e4fbe9%3A0x82976d795012ae31!2sDan%C3%A7art+-+Artigos+de+Dan%C3%A7a!5e0!3m2!1sen!2sbr!4v1473466020415" width="100%" height="533" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div><!-- Google Map End -->
+
+        <div class="clear"></div>
+
+        <!-- Contact Info
+        ============================================= -->
+        <div class="row clear-bottommargin">
+
+            <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                    <div class="fbox-icon">
+                        <a target="_blank" href="https://goo.gl/maps/23dCRGp5nZn"><i class="icon-map-marker2"></i></a>
+                    </div>
+                    <h3><a target="_blank" href="https://goo.gl/maps/23dCRGp5nZn">Nossa localização</a><span class="subtitle">Betim, Minas Gerais</span></h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                    <div class="fbox-icon">
+                        <a href="tel:+553135119685"><i class="icon-phone3"></i></a>
+                    </div>
+                    <h3><a href="tel:+553135119685">Fale conosco</a><span class="subtitle">(31) 3511-9685</span></h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                    <div class="fbox-icon">
+                        <a href="skype:dancart?call"><i class="icon-skype2"></i></a>
+                    </div>
+                    <h3><a href="skype:dancart?call">Entre no chat</a><span class="subtitle">dancart</span></h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                    <div class="fbox-icon">
+                        <a target="_blank" href="https://www.facebook.com/dancart.loja"><i class="icon-facebook2"></i></a>
+                    </div>
+                    <h3><a target="_blank" href="https://www.facebook.com/dancart.loja">Siga no Facebook</a><span class="subtitle">Dancart.Loja</span></h3>
+                </div>
+            </div>
+
+        </div><!-- Contact Info End -->
+
+    </div>
+
+</div>
+{% endblock %}
